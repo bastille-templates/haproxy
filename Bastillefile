@@ -1,4 +1,8 @@
 PKG haproxy
+
+CP usr /
+
+CMD pw useradd haproxy -u 200 -d /var/empty -s /usr/sbin/nologin
 SYSRC haproxy_enable=YES
 CMD haproxy -t
 SERVICE haproxy start
